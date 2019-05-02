@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { CategoriesConsumer } from "../context";
+import PropTypes from "prop-types";
+import Categories from "./Categories";
 
 export default class Meals extends Component {
   render() {
@@ -17,7 +19,7 @@ export default class Meals extends Component {
               <img src={img} alt="Categories" className="card-img-top" />
             </Link>
             <button
-              className="cart-btn"
+              className="card-btn"
               disabled={inCart ? true : false}
               onClick={() => console.log("added to cart")}
             >
@@ -31,6 +33,7 @@ export default class Meals extends Component {
               )}
             </button>
           </div>
+
           <div className="card-footer d-flex justify-content-between">
             <p className="align-self-center mb-0">{title}</p>
             <h5 className="text-red font-italic mb-0">
@@ -42,6 +45,16 @@ export default class Meals extends Component {
     );
   }
 }
+
+// Categories.propTypes = {
+//   categories: PropTypes.shape({
+//     id: PropTypes.number,
+//     img: PropTypes.string,
+//     title: PropTypes.string,
+//     price: PropTypes.number,
+//     inCart: PropTypes.bool
+//   }).isRequired
+// };
 
 const CategoriesWrap = styled.div`
   .card {
@@ -63,11 +76,14 @@ const CategoriesWrap = styled.div`
   .card-img-top{
     transition: all 1s linear;
   }
-  card-btn{
+  .card-btn{
     position:absolute
     bottom: 0;
     right:0;
     padding: 0.2rem 0.4rem;
-    background: var(--mainRed)
+    background: var(--mainBlack);
+    color:white;
+    font-size: 1.4rem;
+    border-radius: 0.6rem 0 0 0;
   }
 `;

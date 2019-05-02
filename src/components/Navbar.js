@@ -16,6 +16,16 @@ export default class Navbar extends Component {
               Categories
             </Link>
           </li>
+          <li>
+            <Link to="/signin" className="nav-link">
+              Sign In
+            </Link>
+          </li>
+          <li>
+            <Link to="/signup" className="nav-link">
+              Sign Up
+            </Link>
+          </li>
         </ul>
         <Link to="/cart" className="ml-auto">
           <Button>
