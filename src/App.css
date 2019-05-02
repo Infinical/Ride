@@ -15,3 +15,7 @@ body {
   letter-spacing: 0.4rem;
   text-transform: uppercase;
 }
+
+.text-red {
+  color: var(--mainRed);
+}

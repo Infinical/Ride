@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
 import Navbar from "./components/Navbar";
 import Categories from "./components/Categories";
 import Meals from "./components/Meals";
@@ -16,6 +18,8 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Categories} />
+        <Route path="/signin" component={Signin} />
+        <Route path="/signup" component={Signup} />
         <Route path="/meals" component={Meals} />
         <Route path="/details" component={Details} />
         <Route path="/cart" component={Cart} />
