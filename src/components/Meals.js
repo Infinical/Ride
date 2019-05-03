@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { CategoriesConsumer } from "../context";
+import { MealsConsumer } from "../context";
 import PropTypes from "prop-types";
 
 export default class Meals extends Component {
   render() {
-    const { id, title, img, inCart, price } = this.props.categories;
+    const { id, title, img, inCart, price } = this.props.meals;
     return (
-      <CategoriesWrap className="col-9 mx-auto col-md-6 col-lg-3 my-3">
+      <MealsWrap className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
-          <CategoriesConsumer>
+          <MealsConsumer>
             {value => {
               return (
                 <div
@@ -39,7 +39,7 @@ export default class Meals extends Component {
                 </div>
               );
             }}
-          </CategoriesConsumer>
+          </MealsConsumer>
           <div className="card-footer d-flex justify-content-between">
             <p className="align-self-center mb-0">{title}</p>
             <h5 className="text-red font-italic mb-0">
@@ -47,7 +47,7 @@ export default class Meals extends Component {
             </h5>
           </div>
         </div>
-      </CategoriesWrap>
+      </MealsWrap>
     );
   }
 }
@@ -62,7 +62,7 @@ Meals.propTypes = {
   }).isRequired
 };
 
-const CategoriesWrap = styled.div`
+const MealsWrap = styled.div`
   .card {
     border-color: transparent;
     transition: all 1s linear;

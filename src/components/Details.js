@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { CategoriesConsumer } from "../context";
+import { MealsConsumer } from "../context";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
 export default class Details extends Component {
   render() {
     return (
-      <CategoriesConsumer>
+      <MealsConsumer>
         {value => {
           const { id, title, img, info, price, inCart } = value.mealDetail;
           return (
@@ -55,7 +55,7 @@ export default class Details extends Component {
             </div>
           );
         }}
-      </CategoriesConsumer>
+      </MealsConsumer>
     );
   }
 }

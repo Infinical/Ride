@@ -1,31 +1,31 @@
 import React, { Component } from "react";
 import { foodCategories, mealDetail } from "./categories";
 
-const CategoriesContext = React.createContext();
+const MealsContext = React.createContext();
 
-class CategoriesProvider extends Component {
+class MealsProvider extends Component {
   state = {
-    categories: [],
+    meals: [],
     mealDetail: mealDetail,
     cart: []
   };
 
   componentDidMount() {
-    this.setCategories();
+    this.setMeals();
   }
-  setCategories = () => {
-    let tempCategories = [];
+  setMeals = () => {
+    let tempMeals = [];
     foodCategories.forEach(item => {
       const singleItem = { ...item };
-      tempCategories = [...tempCategories, singleItem];
+      tempMeals = [...tempMeals, singleItem];
     });
     this.setState(() => {
-      return { categories: tempCategories };
+      return { meals: tempMeals };
     });
   };
 
   getMeal = id => {
-    const meal = this.state.categories.find(item => item.id === id);
+    const meal = this.state.meals.find(item => item.id === id);
     return meal;
   };
   handleDetail = id => {
@@ -36,7 +36,7 @@ class CategoriesProvider extends Component {
   };
 
   addToCart = id => {
-    let tempMeal = [...this.state.categories];
+    let tempMeal = [...this.state.meals];
     const index = tempMeal.indexOf(this.getMeal(id));
     const meal = tempMeal[index];
     meal.inCart = true;
@@ -46,7 +46,7 @@ class CategoriesProvider extends Component {
 
     this.setState(
       () => {
-        return { categories: tempMeal, cart: [...this.state.cart], meal };
+        return { meals: tempMeal, cart: [...this.state.cart], meal };
       },
       () => {
         console.log(this.state);
@@ -55,7 +55,7 @@ class CategoriesProvider extends Component {
   };
   render() {
     return (
-      <CategoriesContext.Provider
+      <MealsContext.Provider
         value={{
           ...this.state,
           handleDetail: this.handleDetail,
@@ -63,11 +63,11 @@ class CategoriesProvider extends Component {
         }}
       >
         {this.props.children}
-      </CategoriesContext.Provider>
+      </MealsContext.Provider>
     );
   }
 }
 
-const CategoriesConsumer = CategoriesContext.Consumer;
+const MealsConsumer = MealsContext.Consumer;
 
-export { CategoriesProvider, CategoriesConsumer };
+export { MealsProvider, MealsConsumer };
