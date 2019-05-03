@@ -3,15 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-import { CategoriesProvider } from "./context";
+import { MealsProvider } from "./context";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <CategoriesProvider>
+  <MealsProvider>
     <Router>
       <App />
     </Router>
-  </CategoriesProvider>,
+  </MealsProvider>,
 
   document.getElementById("root")
 );
