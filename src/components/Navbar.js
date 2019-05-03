@@ -12,7 +12,7 @@ export default class Navbar extends Component {
         </Link>
         <ul className="navbar-nav align-items-center">
           <li className="nav-item ml-5">
-            <Link to="/" className="nav-link">
+            <Link to="/meals" className="nav-link">
               Meals
             </Link>
           </li>
