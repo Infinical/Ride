@@ -7,7 +7,10 @@ class MealsProvider extends Component {
   state = {
     meals: [],
     mealDetail: mealDetail,
-    cart: []
+    cart: foodCategories,
+    cartSubTotal: 20,
+    cartTax: 10,
+    cartTotal: 0
   };
 
   componentDidMount() {
@@ -46,20 +49,40 @@ class MealsProvider extends Component {
 
     this.setState(
       () => {
-        return { meals: tempMeal, cart: [...this.state.cart], meal };
+        return { meals: tempMeal, cart: [...this.state.cart, meal] };
       },
       () => {
         console.log(this.state);
       }
     );
   };
+
+  increment = id => {
+    console.log("Increment");
+  };
+  decrement = id => {
+    console.log("Decrement");
+  };
+
+  removeItem = id => {
+    console.log("Remove item");
+  };
+
+  clearCart = id => {
+    console.log("Cleared cart");
+  };
+
   render() {
     return (
       <MealsContext.Provider
         value={{
           ...this.state,
           handleDetail: this.handleDetail,
-          addToCart: this.addToCart
+          addToCart: this.addToCart,
+          increment: this.increment,
+          decrement: this.decrement,
+          removeItem: this.removeItem,
+          clearCart: this.clearCart
         }}
       >
         {this.props.children}
