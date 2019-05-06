@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { MealsConsumer } from "../context";
+import { MealsConsumer } from "../../context";
 import PropTypes from "prop-types";
 
 export default class Meals extends Component {
@@ -18,7 +18,7 @@ export default class Meals extends Component {
                   onClick={() => value.handleDetail(id)}
                 >
                   <Link to="/details">
-                    <img src={img} alt="Categories" className="card-img-top" />
+                    <img src={img} alt="Meals" className="card-img-top" />
                   </Link>
                   <button
                     className="card-btn"

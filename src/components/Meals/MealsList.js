@@ -1,4 +1,4 @@
-export const foodCategories = [
+export const mealDetail = [
   {
     id: 1,
     title: "Breakfast",
@@ -44,15 +44,3 @@ export const foodCategories = [
     total: 0
   }
 ];
-
-export const mealDetail = {
-  id: 1,
-  title: "Lunch",
-  img: "https://picsum.photos/250/250/",
-  price: 100,
-  info:
-    "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
-  inCart: false,
-  count: 0,
-  total: 0
-};

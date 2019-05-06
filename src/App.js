@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import Details from "./components/Details";
 import Cart from "./components/Cart";
 import Default from "./components/Default";
-import MealsWrap from "./components/MealsWrap";
+import MealsWrap from "./components/Meals/MealsWrap";
 import Home from "./components/Home";
 
 function App() {

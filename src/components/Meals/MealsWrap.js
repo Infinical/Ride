@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Meals from "./Meals";
-import Title from "./Title";
-import { MealsConsumer } from "../context";
+import Meals from "../Meals/Meals";
+import Title from "../Title";
+import { MealsConsumer } from "../../context";
 export default class MealsWrap extends Component {
   render() {
     return (

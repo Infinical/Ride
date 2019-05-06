@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { foodCategories, mealDetail } from "./categories";
+import { mealDetail } from "./components/Meals/MealsList";
 
 const MealsContext = React.createContext();
 
@@ -18,7 +18,7 @@ class MealsProvider extends Component {
   }
   setMeals = () => {
     let tempMeals = [];
-    foodCategories.forEach(item => {
+    mealDetail.forEach(item => {
       const singleItem = { ...item };
       tempMeals = [...tempMeals, singleItem];
     });

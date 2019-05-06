@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import img from "../assets/home.jpg";
 import { Link } from "react-router-dom";
+import Categories from "../components/Categories/Categories";
 
 export default class Home extends Component {
   render() {
@@ -16,6 +17,7 @@ export default class Home extends Component {
             </Link>
           </Section>
         </Header>
+        <Categories />
       </div>
     );
   }
