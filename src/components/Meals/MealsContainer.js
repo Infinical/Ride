@@ -5,8 +5,15 @@ export default class MealsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      meals: []
+      meals: [],
+      cart: [],
+      cartTotal: 0,
+      count: 0,
+      total: 0,
+      inCart: false
     };
+
+    this.addToCart = this.addToCart.bind(this);
   }
 
   componentDidMount() {
@@ -18,16 +25,30 @@ export default class MealsContainer extends Component {
       })
       .catch(error => console.log(error));
   }
+  addToCart(e) {
+    console.log("hello");
+  }
+
   render() {
     return (
       <div>
         {this.state.meals.map(meal => {
           return (
-            <div className="row">
-              <div className="card" key={meal.id}>
-                <h2>{meal.name}</h2>
-                <p>{meal.description}</p>
-                <footer>{meal.price}</footer>
+            <div className="py-5">
+              <div className="container">
+                <div className="row hidden-md-up">
+                  <div className="col-md-4">
+                    <div className="card" key={meal.id}>
+                      <h2>{meal.name}</h2>
+                      <img src={meal.image} alt="Meal" />
+                      <p>{meal.description}</p>
+                      <span className="mr-1">KSH{meal.price}</span>
+                      <button className="card-btn" onClick={this.addToCart}>
+                        <i className="fas fa-cart-plus" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           );
