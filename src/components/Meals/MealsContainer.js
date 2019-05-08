@@ -26,7 +26,7 @@ export default class MealsContainer extends Component {
       .catch(error => console.log(error));
   }
   addToCart(e) {
-    console.log("hello");
+    count;
   }
 
   render() {

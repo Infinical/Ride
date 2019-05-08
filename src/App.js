@@ -10,6 +10,10 @@ import Home from "./components/Home";
 
 import Categories from "./components/Categories/Categories";
 import Meals from "./components/Meals/Meals";
+import Details from "./components/Details";
+import Cart from "./components/Cart";
+import Default from "./components/Default";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -21,6 +25,8 @@ function App() {
         <Route path="/signup" component={Signup} />
         <Route path="/categories" component={Categories} />
         <Route path="/meals" component={Meals} />
+        <Route path="/details" component={Details} />
+        <Route path="/cart" component={Cart} />
         <Route component={Default} />
       </Switch>
     </React.Fragment>
