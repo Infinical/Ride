@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Meals from "../Meals/Meals";
 import Title from "../Title";
-import { MealsConsumer } from "../../context";
+
 export default class MealsWrap extends Component {
   render() {
     return (
@@ -10,13 +10,11 @@ export default class MealsWrap extends Component {
           <div className="container">
             <Title name="Available Meals" />
             <div className="row">
-              <MealsConsumer>
-                {value => {
-                  return value.meals.map(meals => {
-                    return <Meals key={meals.id} meals={meals} />;
-                  });
-                }}
-              </MealsConsumer>
+              {value => {
+                return value.meals.map(meals => {
+                  return <Meals key={meals.id} meals={meals} />;
+                });
+              }}
             </div>
           </div>
         </div>

@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Navbar from "./components/Navbar";
-import Details from "./components/Details";
 import Cart from "./components/Cart";
 import Default from "./components/Default";
 import MealsWrap from "./components/Meals/MealsWrap";
@@ -20,7 +19,6 @@ function App() {
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
         <Route path="/meals" component={MealsWrap} />
-        <Route path="/details" component={Details} />
         <Route path="/cart" component={Cart} />
         <Route component={Default} />
       </Switch>
