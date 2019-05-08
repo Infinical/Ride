@@ -3,15 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-import { MealsProvider } from "./context";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <MealsProvider>
-    <Router>
-      <App />
-    </Router>
-  </MealsProvider>,
+  <Router>
+    <App />
+  </Router>,
 
   document.getElementById("root")
 );

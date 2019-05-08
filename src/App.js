@@ -5,11 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Navbar from "./components/Navbar";
-import Details from "./components/Details";
-import Cart from "./components/Cart";
 import Default from "./components/Default";
-import MealsWrap from "./components/Meals/MealsWrap";
 import Home from "./components/Home";
+
+import Categories from "./components/Categories/Categories";
+import Meals from "./components/Meals/Meals";
 
 function App() {
   return (
@@ -19,9 +19,8 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
-        <Route path="/meals" component={MealsWrap} />
-        <Route path="/details" component={Details} />
-        <Route path="/cart" component={Cart} />
+        <Route path="/categories" component={Categories} />
+        <Route path="/meals" component={Meals} />
         <Route component={Default} />
       </Switch>
     </React.Fragment>
