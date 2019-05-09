@@ -7,7 +7,7 @@ import Signup from "./components/Signup";
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
 import Default from "./components/Default";
-import MealsWrap from "./components/Meals/MealsWrap";
+import Meals from "./components/Meals/Meals";
 import Home from "./components/Home";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
-        <Route path="/meals" component={MealsWrap} />
+        <Route path="/meals" component={Meals} />
         <Route path="/cart" component={Cart} />
         <Route component={Default} />
       </Switch>
